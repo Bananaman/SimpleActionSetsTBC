@@ -1170,6 +1170,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 									</OnClick>
 								</Scripts>
 							</CheckButton>
+							<!--
 							<CheckButton name="$parentFakeItemTooltips" inherits="OptionsCheckButtonTemplate">
 								<Anchors>
 									<Anchor point="TOP" relativeTo="$parentEmptyButtons" relativePoint="BOTTOM">
@@ -1184,11 +1185,12 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 									</OnClick>
 								</Scripts>
 							</CheckButton>
+							-->
 							<CheckButton name="$parentAutoRestore" inherits="OptionsCheckButtonTemplate">
 								<Anchors>
-									<Anchor point="TOP" relativeTo="$parentFakeItemTooltips" relativePoint="BOTTOM">
+									<Anchor point="TOP" relativeTo="$parentEmptyButtons" relativePoint="BOTTOM">
 										<Offset>
-											<AbsDimension x="0" y="10"/>
+											<AbsDimension x="-10" y="10"/>
 										</Offset>
 									</Anchor>
 								</Anchors>

@@ -815,9 +815,9 @@ function SASOptions_OnShow()
 	SASOptionsGeneralEmptyButtons:SetChecked( SAS_Saved[PlrName]["NoEmptyButtons"] );
 	SASOptionsGeneralEmptyButtonsText:SetText( SAS_TEXT_OPTIONS_GENERAL_EMPTYBUTTONS );
 	SASOptionsGeneralEmptyButtons.tooltipText = SAS_TEXT_OPTIONS_GENERAL_EMPTYBUTTONS_TOOLTIP;
-	SASOptionsGeneralFakeItemTooltips:SetChecked( not SAS_Saved[PlrName]["HideFakeItemTooltips"] );
-	SASOptionsGeneralFakeItemTooltipsText:SetText( SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS );
-	SASOptionsGeneralFakeItemTooltips.tooltipText = SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS_TOOLTIP;
+	--SASOptionsGeneralFakeItemTooltips:SetChecked( not SAS_Saved[PlrName]["HideFakeItemTooltips"] );
+	--SASOptionsGeneralFakeItemTooltipsText:SetText( SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS );
+	--SASOptionsGeneralFakeItemTooltips.tooltipText = SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS_TOOLTIP;
 	SASOptionsGeneralAutoRestore:SetChecked( not SAS_Saved[PlrName]["AutoRestore"] );
 	SASOptionsGeneralAutoRestoreText:SetText( SAS_TEXT_OPTIONS_GENERAL_AUTORESTORE );
 	SASOptionsGeneralAutoRestore.tooltipText = SAS_TEXT_OPTIONS_GENERAL_AUTORESTORE_TOOLTIP;
@@ -842,9 +842,11 @@ function SASOptions_General_EmptyButtons(self)
 	SASActions_Display();
 end
 
+--[[
 function SASOptions_General_FakeItemTooltips(self)
 	SAS_Saved[PlrName]["HideFakeItemTooltips"] = not self:GetChecked();
 end
+]]
 
 function SASOptions_General_AutoRestore(self)
 	SAS_Saved[PlrName]["AutoRestore"] = not self:GetChecked();

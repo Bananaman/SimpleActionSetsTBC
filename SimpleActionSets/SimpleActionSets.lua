@@ -1422,6 +1422,7 @@ function SAS_ParseActionInfo( action, ... )
 	if type(action)~="string" then return action; end
 	local a = {strsplit("·",action)};
 	for k, v in pairs(a) do if v == "" then a[k] = nil; end end
+	if ( a[1] == nil ) then return; end -- ignore slots that lack an item/spell/macro name (meaning they're empty!)
 	if ( select("#",...) > 0 ) then
 		local b = {};
 		for i=1, select("#",...) do

@@ -1505,14 +1505,18 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						self:SetFocus();
 					</OnShow>
 					<OnEnterPressed>
-						SASSaveMenu_Save(SASSaveMenuNameEB:GetText());
+						local name = string.trim(SASSaveMenuNameEB:GetText() or "");
+						if ( name ~= "" ) then
+							SASSaveMenu_Save(name);
+						end
 					</OnEnterPressed>
 					<OnTextChanged>
-						if ( self:GetText() == "" ) then
+						local name = string.trim(SASSaveMenuNameEB:GetText() or "");
+						if ( name == "" ) then
 							getglobal(self:GetParent():GetName() .. "OkayButton"):Disable();
 							SASSaveMenuHelp:SetText("|cffff0000You must enter a name for the new set.");
 							SASSaveMenuHelp:Show();
-						elseif ( SAS_SetExists(self:GetText()) ) then
+						elseif ( SAS_SetExists(name) ) then
 							getglobal(self:GetParent():GetName() .. "OkayButton"):Enable();
 							SASSaveMenuHelp:SetText("|cffff0000This set already exists, save over it?");
 							SASSaveMenuHelp:Show();
@@ -1540,7 +1544,10 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						SASSaveMenu_Save(SASSaveMenuNameEB:GetText());
+						local name = string.trim(SASSaveMenuNameEB:GetText() or "");
+						if ( name ~= "" ) then
+							SASSaveMenu_Save(name);
+						end
 					</OnClick>
 				</Scripts>
 			</Button>

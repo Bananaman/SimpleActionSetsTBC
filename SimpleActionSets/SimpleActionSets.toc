@@ -1,0 +1,12 @@
+## Interface: 30100
+## Version: 0.70b
+## Author: Brodrick (aka Kirov)
+## Title: SimpleActionSets
+## Notes: Allows all existing actions to be saved to a set which can be changed to later.
+## SavedVariables: SAS_Saved, SAS_BackUp, SAS_POS, SAS_OFFSET
+
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+libs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+
+SimpleActionSets.xml

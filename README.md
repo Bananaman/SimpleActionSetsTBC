@@ -4,6 +4,8 @@ This is a TBC backport of "Simple Action Sets" (from Wrath of the Lich King), al
 
 It is _without a doubt_ the _best_ addon for saving and restoring your actionbars, and has a great GUI which allows you to choose _exactly_ which bars and buttons to save and restore (all bars and buttons, or just a few), and lets you view the contents of your saved sets without restoring them. It is much, much, _muuuuch_ better than the absolute-garbage "ActionBarSaver" addon which people usually use (which lacks a GUI and has no fine-grained controls whatsoever).
 
+Swapping sets is incredibly easy. Just open the GUI, select the desired set and apply it. Or right-click on the minimap button and apply that set. Or use the command-line control, such as `/sas swap <setname>` to quickly swap sets (can be used via macros).
+
 So what are you waiting for? Download Simple Action Sets and try it out! You'll wonder how you ever lived without it!
 
 Requires World of Warcraft - The Burning Crusade! (TBC 2.4.6)

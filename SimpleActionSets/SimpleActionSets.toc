@@ -1,8 +1,10 @@
-## Interface: 30100
+## Interface: 20400
+## Title: SimpleActionSets (TBC)
 ## Version: 0.70b
 ## Author: Brodrick (aka Kirov)
-## Title: SimpleActionSets
-## Notes: Allows all existing actions to be saved to a set which can be changed to later.
+## X-Additional-Authors: VideoPlayerCode (TBC Backporting & Enhancements)
+## X-Website: https://github.com/VideoPlayerCode/SimpleActionSetsTBC
+## Notes: Allows your action bars to be saved and then restored at a later time.
 ## SavedVariables: SAS_Saved, SAS_BackUp, SAS_POS, SAS_OFFSET
 
 libs\LibStub\LibStub.lua

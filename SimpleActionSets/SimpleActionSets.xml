@@ -345,7 +345,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 	<Button name="SASTabButtonTemplate" inherits="CharacterFrameTabButtonTemplate" virtual="true">
 		<Scripts>
 			<OnClick>
-				PanelTemplates_Tab_OnClick(self, self:GetParent());
+				PanelTemplates_Tab_OnClick(self:GetParent());
 				SASMain_UpdateDisplay(self);
 			</OnClick>
 		</Scripts>

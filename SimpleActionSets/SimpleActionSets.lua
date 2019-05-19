@@ -278,13 +278,13 @@ end
 
 function SASActions_DropDown_OnLoad(self)
 	UIDropDownMenu_Initialize(self, SASActions_DropDown_Initialize);
-	UIDropDownMenu_SetWidth(self,135);
-	UIDropDownMenu_SetButtonWidth(self,24);
-	UIDropDownMenu_JustifyText(self,"LEFT", SASActionSetsDropDown);
+	UIDropDownMenu_SetWidth(135,self);
+	UIDropDownMenu_SetButtonWidth(24,self);
+	UIDropDownMenu_JustifyText("LEFT",self);
 	if ( SAS_GetCurrentSet() ) then
-		UIDropDownMenu_SetSelectedName( self, SASActionSetsDropDown, SAS_GetCurrentSet());
+		UIDropDownMenu_SetSelectedName( self, SAS_GetCurrentSet());
 	else
-		UIDropDownMenu_SetText( self, "|c00999999"..SAS_TEXT_CURRENT, SASActionSetsDropDown );
+		UIDropDownMenu_SetText( "|c00999999"..SAS_TEXT_CURRENT, self );
 	end
 end
 
@@ -306,9 +306,9 @@ function SASActions_DropDown_Initialize(self)
 	end
 end
 
-function SASActions_DropDown_OnClick(self)
-	UIDropDownMenu_SetSelectedID( SASActionSetsDropDown, self:GetID() );
-	SASActions_Load(self:GetText());
+function SASActions_DropDown_OnClick()
+	UIDropDownMenu_SetSelectedID( SASActionSetsDropDown, this:GetID() );
+	SASActions_Load(this:GetText());
 end
 
 function SASActions_Display()
@@ -563,9 +563,9 @@ end
 
 function SASSets_Character_DropDown_OnLoad(self)
 	UIDropDownMenu_Initialize(self, SASSets_Character_DropDown_Initialize);
-	UIDropDownMenu_SetWidth(self,160);
-	UIDropDownMenu_SetButtonWidth(self,24);
-	UIDropDownMenu_JustifyText(self,"LEFT");
+	UIDropDownMenu_SetWidth(160,self);
+	UIDropDownMenu_SetButtonWidth(24,self);
+	UIDropDownMenu_JustifyText("LEFT",self);
 	UIDropDownMenu_SetSelectedID(self, 1 );
 end
 
@@ -594,17 +594,17 @@ function SASSets_Character_DropDown_Initialize()
 	end
 end
 
-function SASSets_Character_DropDown_OnClick(self)
-	UIDropDownMenu_SetSelectedName( SASSets_Character_DropDown, self:GetText() );
+function SASSets_Character_DropDown_OnClick()
+	UIDropDownMenu_SetSelectedName( SASSets_Character_DropDown, this:GetText() );
 	UIDropDownMenu_Initialize( SASSets_CharacterSets_DropDown, SASSets_CharacterSets_DropDown_Initialize);
 	UIDropDownMenu_SetSelectedID( SASSets_CharacterSets_DropDown, 1 );
 end
 
 function SASSets_CharacterSets_DropDown_OnLoad(self)
 	UIDropDownMenu_Initialize(self, SASSets_CharacterSets_DropDown_Initialize);
-	UIDropDownMenu_SetWidth(self,160);
-	UIDropDownMenu_SetButtonWidth(self,24);
-	UIDropDownMenu_JustifyText( self,"LEFT" );
+	UIDropDownMenu_SetWidth(160,self);
+	UIDropDownMenu_SetButtonWidth(24,self);
+	UIDropDownMenu_JustifyText("LEFT",self);
 	UIDropDownMenu_SetSelectedID( self, 1 );
 end
 
@@ -628,8 +628,8 @@ function SASSets_CharacterSets_DropDown_Initialize()
 	end
 end
 
-function SASSets_CharacterSets_DropDown_OnClick(self)
-	UIDropDownMenu_SetSelectedID(SASSets_CharacterSets_DropDown, self:GetID() );
+function SASSets_CharacterSets_DropDown_OnClick()
+	UIDropDownMenu_SetSelectedID(SASSets_CharacterSets_DropDown, this:GetID() );
 end
 
 function SASActions_LoadOtherSet()
@@ -1161,9 +1161,9 @@ function SAS_SetsDropDown_Initialize()
 	end
 end
 
-function SASMinimap_SetsDropDown_OnClick(self)
+function SASMinimap_SetsDropDown_OnClick()
 	-- minimap dropdown menu handler
-	local id = self:GetID();
+	local id = this:GetID();
 	if ( id == 2 ) then
 		ShowUIPanel(SASMain);
 	elseif ( id == 3 ) then
@@ -1171,8 +1171,8 @@ function SASMinimap_SetsDropDown_OnClick(self)
 	elseif ( id == 4 ) then
 		SAS_Warning("SAVE", SAS_SaveSet, SAS_GetCurrentSet());
 	elseif ( id > 5 ) then
-		SASDebug( self:GetText() );
-		SAS_SwapSet( self:GetText() );
+		SASDebug( this:GetText() );
+		SAS_SwapSet( this:GetText() );
 	end
 end
 

@@ -22,13 +22,13 @@ SAS_TEXT_TAB_SETS = "Action Sets";
 SAS_TEXT_TAB_OPTIONS = "Options";
 SAS_TEXT_TAB_HELP = "Help";
 
-SAS_TEXT_WARNING_UNSAVED_LOAD = "You have unsaved changes, are you sure you want to load over them?";
-SAS_TEXT_WARNING_UNSAVED_CANCEL = "You have unsaved changes, are you sure you want to close this window and lose those changes?";
-SAS_TEXT_WARNING_DELETE = "You are about to delete set '|cffffffff%s|r'.\nDo you really want to delete this set?";
-SAS_TEXT_WARNING_SAVE = "You are about to save changes to set '|cffffffff%s|r'";
-SAS_TEXT_WARNING_SWAPPING = "You are about to apply this set to your action buttons, do you really want to do this?";
-SAS_TEXT_WARNING_SWAPPINGSAVE = "You are about to save set '|cffffffff%s|r' and to apply it to your action buttons, do you really want to do this?";
-SAS_TEXT_WARNING_CHANGEDSINCELAST = "Your actions appear to have been changed since last time you played.  Do you want to attempt to reset them?";
+SAS_TEXT_WARNING_UNSAVED_LOAD = "You have unsaved changes. Are you sure that you want to load over them?";
+SAS_TEXT_WARNING_UNSAVED_CANCEL = "You have unsaved changes. Are you sure that you want to close this window and lose those changes?";
+SAS_TEXT_WARNING_DELETE = "Are you sure that you want to delete set '|cffffffff%s|r'?";
+SAS_TEXT_WARNING_SAVE = "Are you sure that you want to save the changes to set '|cffffffff%s|r'?";
+SAS_TEXT_WARNING_SWAPPING = "Are you sure that you want to apply this action button set?";
+SAS_TEXT_WARNING_SWAPPINGSAVE = "Are you sure that you want to save the changes to set '|cffffffff%s|r' and apply it to your action buttons?";
+SAS_TEXT_WARNING_CHANGEDSINCELAST = "Your action bars have changed since the last time you played. Do you want to attempt to restore them?";
 SAS_TEXT_WARNING_OKAY = "Okay";
 SAS_TEXT_WARNING_CANCEL = "Cancel";
 

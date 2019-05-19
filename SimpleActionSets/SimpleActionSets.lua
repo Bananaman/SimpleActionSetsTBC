@@ -1611,7 +1611,7 @@ end
 
 function SAS_SetTooltip( self, bar, id )
 	-- Sets the Tooltip for the found action
-	if ( not bar or not id ) then return; end
+	if ( not bar or not id ) then GameTooltip:Hide(); return; end
 
 	if ( SAS_Temp[bar][id] ) then
 		if ( SAS_Temp[bar][id] == 0 ) then
@@ -1624,6 +1624,7 @@ function SAS_SetTooltip( self, bar, id )
 			GameTooltip:Show();
 		else
 			local name, texture, rank, link, macro = SAS_ParseActionInfo( SAS_Temp[bar][id] );
+			if ( not name ) then GameTooltip:Hide(); return; end -- abort if empty action slot
 			texture = SAS_FullPath(texture);
 			local TooltipReturn;
 			-- is a macro

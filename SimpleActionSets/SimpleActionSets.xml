@@ -566,6 +566,11 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Offset>
 					</Anchor>
 				</Anchors>
+				<Scripts>
+					<OnClick>
+						SASActions_Cancel(self);
+					</OnClick>
+				</Scripts>
 			</Button>
 			<CheckButton name="SASActionsCheckAll" checked="true">
 				<Size>

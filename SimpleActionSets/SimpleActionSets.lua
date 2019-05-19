@@ -892,8 +892,19 @@ end
 --------------------------------------
 -- Warning and Save Frame Functions --
 --------------------------------------
-function SAS_Warning( type, func, value, force )
-	if ( SAS_Saved[PlrName]["NoUIWarnings"] and ( not force or SAS_Saved[PlrName]["NoAutoRestoreWarnings"] ) ) then
+function SAS_Warning( type, func, value )
+	local noWarning = false;
+	if ( type == "CHANGEDSINCELAST" ) then -- Auto-restoring actionbars at login...
+		if ( SAS_Saved[PlrName]["NoAutoRestoreWarnings"] ) then
+			noWarning = true;
+		end
+	else -- All other types of warnings...
+		if ( SAS_Saved[PlrName]["NoUIWarnings"] ) then
+			noWarning = true;
+		end
+	end
+
+	if ( noWarning ) then
 		func(value);
 	else
 		if ( value ) then
@@ -977,7 +988,7 @@ function SASMinimap_OnEvent(self)
 
 		if ( SAS_Saved[PlrName]["AutoRestore"] and SAS_Saved["BackUp"] and SAS_Saved["BackUp"]["s"][PlrName] ) then
 			if ( SAS_CompareSet( liveactions, SAS_Saved["BackUp"]["s"][PlrName] ) ) then
-				SAS_Warning( "CHANGEDSINCELAST", SAS_RestoreBackUp, nil, 1 );
+				SAS_Warning( "CHANGEDSINCELAST", SAS_RestoreBackUp );
 				return;
 			end
 		end

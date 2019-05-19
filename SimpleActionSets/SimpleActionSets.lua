@@ -979,6 +979,19 @@ function SASMinimap_OnEvent(self)
 			SAS_UpgradeSets();
 		end
 
+		if ( not SAS_Saved["BackUp"] ) then
+			SAS_Saved["BackUp"] = {};
+			SAS_Saved["BackUp"]["s"] = {};
+		end
+
+		if ( not SAS_Saved["BackUp"]["s"][PlrName] ) then
+			-- if we've never encountered this character before, we must perform a backup
+			-- immediately just so that our main GUI dropdowns will work properly. however,
+			-- once a backup exists for a character, we'll only create new backups at logout
+			-- after that, as usual... to avoid overwriting the backup immediately at login!
+			SAS_Saved["BackUp"]["s"][PlrName] = SAS_IterateActions();
+		end
+
 		if ( SAS_Saved[PlrName]["HideMinimapButton"] ) then
 			SASMinimapFrame:Hide();
 		end
@@ -1017,10 +1030,6 @@ function SASMinimap_OnEvent(self)
 			SASActions_Display();
 		end
 	elseif ( event == "PLAYER_LOGOUT" ) then
-		if ( not SAS_Saved["BackUp"] ) then
-			SAS_Saved["BackUp"] = {};
-			SAS_Saved["BackUp"]["s"] = {};
-		end
 		SAS_Saved["BackUp"]["s"][PlrName] = SAS_IterateActions();
 	elseif ( event == "PLAYER_REGEN_DISABLED" ) then
 		inCombat = 1;

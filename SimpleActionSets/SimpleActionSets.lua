@@ -818,7 +818,7 @@ function SASOptions_OnShow()
 	--SASOptionsGeneralFakeItemTooltips:SetChecked( not SAS_Saved[PlrName]["HideFakeItemTooltips"] );
 	--SASOptionsGeneralFakeItemTooltipsText:SetText( SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS );
 	--SASOptionsGeneralFakeItemTooltips.tooltipText = SAS_TEXT_OPTIONS_GENERAL_FAKEITEMTOOLTIPS_TOOLTIP;
-	SASOptionsGeneralAutoRestore:SetChecked( not SAS_Saved[PlrName]["AutoRestore"] );
+	SASOptionsGeneralAutoRestore:SetChecked( SAS_Saved[PlrName]["AutoRestore"] );
 	SASOptionsGeneralAutoRestoreText:SetText( SAS_TEXT_OPTIONS_GENERAL_AUTORESTORE );
 	SASOptionsGeneralAutoRestore.tooltipText = SAS_TEXT_OPTIONS_GENERAL_AUTORESTORE_TOOLTIP;
 	SASOptionsGeneralAutoRestoreWarning:SetChecked( not SAS_Saved[PlrName]["NoAutoRestoreWarnings"] );
@@ -849,7 +849,7 @@ end
 ]]
 
 function SASOptions_General_AutoRestore(self)
-	SAS_Saved[PlrName]["AutoRestore"] = not self:GetChecked();
+	SAS_Saved[PlrName]["AutoRestore"] = self:GetChecked();
 end
 
 function SASOptions_General_AutoRestoreWarnings(self)

@@ -8,7 +8,7 @@ Swapping sets is incredibly easy. Just open the GUI, select the desired set and 
 
 So what are you waiting for? Download Simple Action Sets and try it out! You'll wonder how you ever lived without it!
 
-Requires World of Warcraft - The Burning Crusade! (TBC 2.4.6)
+Requires World of Warcraft - The Burning Crusade! (TBC 2.4.3)
 
 **Download: [SimpleActionSetsTBC-master.zip](https://github.com/VideoPlayerCode/SimpleActionSetsTBC/archive/master.zip)** (Put the inner "SimpleActionSets" folder into your WoW's "Interface/AddOns" folder.)
 
